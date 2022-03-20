@@ -14,10 +14,8 @@ const createUser = {
 const getAllUser = {
   query: Joi.object().keys({
     firstName: Joi.string(),
-    lastName: Joi.string(),
-    email: Joi.string(),
+    email: Joi.string().email(),
     phoneNo: Joi.number().integer(),
-    password: Joi.string(),
   }),
 };
 
