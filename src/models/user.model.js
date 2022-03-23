@@ -4,6 +4,8 @@ const bcrypt = require('bcryptjs');
 const { toJSON, paginate } = require('./plugins');
 const { roles } = require('../config/roles');
 
+const routes = [ 'createUser', 'getAllUser', 'getUser', 'updteUser', 'deleteUser' ]
+
 const userSchema = mongoose.Schema(
   {
     firstName: {
@@ -50,6 +52,12 @@ const userSchema = mongoose.Schema(
       },
       private: true, // used by the toJSON plugin
     },
+    routeAccess: [
+      {
+        type: String,
+        enum: routes,
+      }
+    ]
   },
   {
     timestamps: true,
