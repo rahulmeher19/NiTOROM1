@@ -1,7 +1,7 @@
 const allRoles = {
   user: ['getAllUser', 'createUser'],
-  admin: ['getAllUser', 'createUser'],
-  manager: ['getUser'],
+  admin: ['getAllUser', 'createUser','getUserById'],
+  manager: ['getUser','getUserById'],
   seniorManager: ['getAllUser'],
 };
 
