@@ -8,7 +8,7 @@ const roleSchema = mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      unique:true,
+      unique: true,
     },
     roleTitle: {
       type: String,
@@ -16,21 +16,21 @@ const roleSchema = mongoose.Schema(
       trim: true,
     },
     description: {
-    type: String,
-    required: true,
-    trim: true
+      type: String,
+      required: true,
+      trim: true,
     },
     lastUpdatedOn: {
-    type: Date,
-    default: Date.now
+      type: Date,
+      default: Date.now,
     },
     lastUpdatedBy: {
-    type: String,   
+      type: String,
     },
     role: {
-    type: String,
-    enum: roles,
-    default: 'role',
+      type: String,
+      enum: roles,
+      default: 'role',
     },
   },
   {
@@ -42,8 +42,8 @@ const roleSchema = mongoose.Schema(
  * @param {string} roleName - The role's roleName
  * @returns {Promise<boolean>}
  */
- roleSchema.statics.isRoleNameTaken = async function (roleName) {
-  const role = await this.findOne({ roleName});
+roleSchema.statics.isRoleNameTaken = async function (roleName) {
+  const role = await this.findOne({ roleName });
   return !!role;
 };
 
